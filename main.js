@@ -9,7 +9,7 @@ const AzureApp = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>Hello, world!</Text>
+      <Text>NLEats Hydroponics</Text>
     </View>
   );
 };
