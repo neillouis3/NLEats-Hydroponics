@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 
 export {
-  // Catch any errors thrown by the Layout component.
+  // Catch any errors thrown by the Layout component.\
+
   ErrorBoundary,
 } from 'expo-router';
 
@@ -25,7 +26,7 @@ export default function RootLayout() {
   });
 
   // Expo Router uses Error Boundaries to catch errors in the navigation tree.
-  
+
   useEffect(() => {
     if (error) throw error;
   }, [error]);
