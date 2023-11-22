@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   },
   separator: {
     marginVertical: 30,
-    height: 1,
+    height: 2,
     width: '80%',
     
   },
