@@ -11,6 +11,7 @@ export default function ShelfScreen() {
       <EditScreenInfo path="app/(tabs)/index.tsx" />
     </View>
   );
+  
 }
 
 const styles = StyleSheet.create({
