@@ -2,16 +2,16 @@ import React from "react";
 import { StyleSheet } from "react-native";
 import { Text, View } from "./Themed";
 
-const LoginButton = () => {
+const IndexButton = (props) => {
     return (
         <View>
-            <Text style={styles.title}>Login</Text>
+            <Text style={styles.title}>{props.text}</Text>
         </View>
     );
     
 }
 
-export default LoginButton;
+export default IndexButton;
 
 const styles = StyleSheet.create({  
     title: {  
