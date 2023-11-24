@@ -15,8 +15,10 @@ const IndexScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>NLEats</Text>
       <Text style={styles.title}>Hydroponics</Text>
-      <LoginButton/>
-      <RegisterButton/>
+      <LoginButton
+      />
+      <RegisterButton
+      />
 
     </ScrollView>
   );
