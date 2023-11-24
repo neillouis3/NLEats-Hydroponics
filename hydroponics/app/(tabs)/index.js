@@ -3,11 +3,13 @@ import { Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter } from 'expo-router';
-import IndexButton from '../../components/IndexButton';
+import LoginBtn from '../../components/LoginBtn';
+import RegisterBtn from '../../components/RegisterBtn';
 
 
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
+
 
 
 const IndexScreen = () => {
@@ -18,14 +20,17 @@ const IndexScreen = () => {
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="NLEats"/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
-      <IndexButton
+      <LoginBtn
         onPress={() => router.push('/hydroponics/app/(tabs)/login')}
         text="Login"
+
       />
-      <IndexButton
+      <RegisterBtn
         onPress={() => router.push('/hydroponics/app/(tabs)/register')}
         text="Register"
+
       />
+
 
     </ScrollView>
   );
@@ -37,17 +42,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+
   },
+
+
   image:{
-    width: 300,
-    height: 300,
-    marginBottom: 20,
+    resizeMode: 'contain',
+    width: '75%',
+    margin: 0,
+    padding: 0,
   },
   heading: {
     fontSize: 100,
     fontWeight: 'bold',
-    marginBottom: 20,
+    marginTop: 0,
+    marginBottom: 5,
   },
   subheading: {
     fontSize: 30,

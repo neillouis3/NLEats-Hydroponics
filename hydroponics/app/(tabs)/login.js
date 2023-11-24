@@ -3,9 +3,10 @@ import { Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter } from 'expo-router';
-import IndexButton from '../../components/IndexButton';
+import IndexButton from '../../components/LoginBtn';
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
+
 
 
 const LoginScreen = () => {
