@@ -4,6 +4,8 @@ import { Alert, Pressable, StyleSheet, ScrollView } from 'react-native';
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter } from 'expo-router';
 
+import loginButton from '../../components/loginButton';
+import registerButton from '../../components/registerButton';
 
 
 const IndexScreen = () => {
