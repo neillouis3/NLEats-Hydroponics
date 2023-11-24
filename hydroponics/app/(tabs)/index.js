@@ -5,7 +5,7 @@ import { Text, View } from '../../components/Themed';
 import { Stack, useRouter } from 'expo-router';
 
 import loginButton from '../../components/loginButton';
-import registerButton from '../../components/registerButton';
+import {registerButton} from '../../components/registerButton';
 
 
 const IndexScreen = () => {
@@ -14,7 +14,8 @@ const IndexScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>NLEats</Text>
       <Text style={styles.title}>Hydroponics</Text>
-
+      <loginButton/>
+      <registerButton/>
     </ScrollView>
   );
 }
