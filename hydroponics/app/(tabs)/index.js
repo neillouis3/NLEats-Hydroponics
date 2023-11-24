@@ -3,9 +3,10 @@ import { Alert, Pressable, StyleSheet, ScrollView } from 'react-native';
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter } from 'expo-router';
+import LoginButton from '../../components/LoginButton';
+import RegisterButton from '../../components/RegisterButton';
 
-import loginButton from '../../components/loginButton';
-import {registerButton} from '../../components/registerButton';
+
 
 
 const IndexScreen = () => {
@@ -14,8 +15,9 @@ const IndexScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.title}>NLEats</Text>
       <Text style={styles.title}>Hydroponics</Text>
-      <loginButton/>
-      <registerButton/>
+      <LoginButton/>
+      <RegisterButton/>
+
     </ScrollView>
   );
 }
