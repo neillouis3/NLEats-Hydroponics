@@ -1,4 +1,4 @@
-import { Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
+import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
