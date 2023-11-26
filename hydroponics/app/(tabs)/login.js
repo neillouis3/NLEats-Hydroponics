@@ -35,6 +35,7 @@ const LoginScreen = () => {
         onPress={() => router.push('/hydroponics/app/(tabs)/login')}
         text="Login"
       />
+      <Text>Forgot username or password</Text>
 
 
     </ScrollView>
