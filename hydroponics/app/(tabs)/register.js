@@ -18,7 +18,27 @@ const RegisterScreen = () => {
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="NLEats"/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
-
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="Username"
+        keyboardType="numeric"
+      /> 
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="Email"
+        keyboardType="numeric"
+      />       
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="Password"
+        keyboardType="numeric"
+      />
       <IndexButton
         onPress={() => router.push('/hydroponics/app/(tabs)/register')}
         text="Register"
