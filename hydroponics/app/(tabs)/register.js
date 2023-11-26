@@ -71,6 +71,7 @@ const styles = StyleSheet.create({
   subheading: {
     fontSize: 30,
     marginBottom: 20,
+    
   },
 
 
