@@ -21,16 +21,12 @@ const IndexScreen = () => {
       <HeaderText style={styles.heading} text="NLEats"/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
       <Link href={'/login'} asChild>
-      <LoginBtn
-        text="Login"
-      
-      />
+        <LoginBtn text="Login" />
       </Link>
-      <RegisterBtn
-        onPress={() => router.push('/hydroponics/app/(tabs)/register')}
-        text="Register"
+      <Link href={'/register'} asChild>
+        <RegisterBtn text="Register"/>
+      </Link>
 
-      />
 
 
     </ScrollView>

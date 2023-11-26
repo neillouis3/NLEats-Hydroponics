@@ -1,11 +1,11 @@
 import React from "react";
-import { View, Button, StyleSheet, TouchableOpacity, Text } from "react-native";
+import { View, Button, StyleSheet, TouchableOpacity, Text, Pressable } from "react-native";
 
 
 
 const RegisterBtn = ({onPress, text}) => {
     return (
-        <TouchableOpacity onPress={onPress} style={styles.btnContainer}><Text style={styles.title}>{text}</Text></TouchableOpacity>
+        <Pressable onPress={onPress} style={styles.btnContainer}><Text style={styles.title}>{text}</Text></Pressable>
     );
     
 }

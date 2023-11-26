@@ -31,8 +31,7 @@ const RegisterScreen = () => {
       />       
       <TextInput
         style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
+
         placeholder="Password"
         keyboardType="numeric"
       />
