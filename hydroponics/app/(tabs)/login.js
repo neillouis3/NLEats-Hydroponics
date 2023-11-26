@@ -6,6 +6,7 @@ import { Stack, useRouter } from 'expo-router';
 import IndexButton from '../../components/LoginBtn';
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
+import HyperLink from '../../components/HyperLink';
 
 
 
@@ -35,7 +36,7 @@ const LoginScreen = () => {
         onPress={() => router.push('/hydroponics/app/(tabs)/login')}
         text="Login"
       />
-      
+
       <Text>Forgot username or password</Text>
 
 
