@@ -2,7 +2,7 @@ import { Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useRouter, Link } from 'expo-router';
 import LoginBtn from '../../components/LoginBtn';
 import RegisterBtn from '../../components/RegisterBtn';
 
@@ -20,11 +20,12 @@ const IndexScreen = () => {
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="NLEats"/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
+      <Link href={'/login'} asChild>
       <LoginBtn
-        onPress={() => router.push('/hydroponics/app/(tabs)/login')}
         text="Login"
-
+      
       />
+      </Link>
       <RegisterBtn
         onPress={() => router.push('/hydroponics/app/(tabs)/register')}
         text="Register"
@@ -42,6 +43,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    justifyContent: 'center',
 
   },
 
@@ -49,6 +51,7 @@ const styles = StyleSheet.create({
   image:{
     resizeMode: 'stretch',
     width: '75%',
+    height: '35%',
     margin: 0,
     padding: 0,
   },
