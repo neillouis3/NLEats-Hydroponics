@@ -19,15 +19,13 @@ const RegisterScreen = () => {
       <GradientText style={styles.subheading} text="Enter your details to register"/>     
       <TextInput
         style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
+
         placeholder="Username"
         keyboardType="numeric"
       /> 
       <TextInput
         style={styles.input}
-        onChangeText={onChangeNumber}
-        value={number}
+
         placeholder="Email"
         keyboardType="numeric"
       />       
@@ -48,3 +46,34 @@ const RegisterScreen = () => {
 }
 
 export default RegisterScreen;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+
+  },
+
+
+  image:{
+    resizeMode: 'stretch',
+    width: '75%',
+    height: '35%',
+    margin: 0,
+    padding: 0,
+  },
+  heading: {
+    fontSize: 100,
+    fontWeight: 'bold',
+    marginTop: 0,
+    marginBottom: 5,
+  },
+  subheading: {
+    fontSize: 30,
+    marginBottom: 20,
+  },
+
+
+
+});
