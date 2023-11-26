@@ -14,10 +14,9 @@ const LoginScreen = () => {
   const router = useRouter;
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <Image style={styles.image} source={require('../../assets/images/indexLogo.png')} />
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="NLEats"/>
-      <GradientText style={styles.subheading} text="Hydroponics"/>   
+      <HeaderText style={styles.heading} text="Login"/>
+      <GradientText style={styles.subheading} text="Enter your details to login"/>   
       <TextInput
         style={styles.input}
         placeholder="Username"
