@@ -16,7 +16,21 @@ const LoginScreen = () => {
       <Image style={styles.image} source={require('../../assets/images/indexLogo.png')} />
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="NLEats"/>
-      <GradientText style={styles.subheading} text="Hydroponics"/>     
+      <GradientText style={styles.subheading} text="Hydroponics"/>   
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="Username"
+        keyboardType="numeric"
+      /> 
+      <TextInput
+        style={styles.input}
+        onChangeText={onChangeNumber}
+        value={number}
+        placeholder="Password"
+        keyboardType="numeric"
+      />   
       <IndexButton
         onPress={() => router.push('/hydroponics/app/(tabs)/login')}
         text="Login"
