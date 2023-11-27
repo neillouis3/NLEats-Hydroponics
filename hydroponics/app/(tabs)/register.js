@@ -16,7 +16,7 @@ const RegisterScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="Register"/>
-      <GradientText style={styles.subheading} text="Enter your details to register"/>     
+      <Text style={styles.subheading}>Enter your details to register</Text>    
       <TextInput
         style={styles.input}
 
@@ -70,13 +70,13 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   heading: {
-    fontSize: 100,
+    fontSize: 75,
     fontWeight: 'bold',
     marginTop: 0,
     marginBottom: 5,
   },
   subheading: {
-    fontSize: 30,
+    fontSize: 15,
     marginBottom: 20,
     
   },

@@ -16,7 +16,7 @@ const LoginScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="Login"/>
-      <GradientText style={styles.subheading} text="Enter your details to login"/>   
+      <Text style={styles.subheading}>Enter your details to register</Text>   
       <TextInput
         style={styles.input}
         placeholder="Username"
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     padding: 10,
     width: '75%',
   },
-  
+
   image:{
     resizeMode: 'stretch',
     width: '75%',
