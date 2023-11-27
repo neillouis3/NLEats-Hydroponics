@@ -8,14 +8,15 @@ import RegisterBtn from '../../components/RegisterBtn';
 
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
-
+import color from "../../constants/color";
 
 const RegisterScreen = () => {
   const router = useRouter;
   return (
+    
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="Register"/>
+      <HeaderText style={styles.heading} text="Register" textColor={color.darkGreen}/>
       <Text style={styles.subheading}>Enter your details to register</Text>    
       <TextInput
         style={styles.input}

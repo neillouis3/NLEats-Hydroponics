@@ -7,6 +7,7 @@ import IndexButton from '../../components/LoginBtn';
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
+import color from "../../constants/color";
 
 
 const LoginScreen = () => {
@@ -14,7 +15,7 @@ const LoginScreen = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="Login"/>
+      <HeaderText style={styles.heading} text="Login" textColor={color.darkGreen}/>
       <Text style={styles.subheading}>Enter your details to register</Text>   
       <TextInput
         style={styles.input}
