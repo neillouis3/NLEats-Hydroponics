@@ -1,8 +1,9 @@
 import React from "react";
 import { View, Button, StyleSheet, TouchableOpacity, Text, Pressable } from "react-native";
+import color from "../constants/color";
 
 
-const RegisterBtn = ({onPress, text}) => {
+const RegisterBtn = ({onPress, text, btnColor}) => {
     return (
         <Pressable onPress={onPress} style={styles.btnContainer}><Text style={styles.title}>{text}</Text></Pressable>
     );
@@ -14,9 +15,8 @@ export default RegisterBtn;
 const styles = StyleSheet.create({
     // ...
     btnContainer: {
-        backgroundColor: 'transparent',
-        boderColor: 'rgba(37, 90, 19, 1)',
-        borderWidth: 1,
+        backgroundColor: color.lightGreen,
+        borderWidth: 0,
         borderRadius: 90,
         paddingVertical: 0,
         paddingHorizontal: 75,

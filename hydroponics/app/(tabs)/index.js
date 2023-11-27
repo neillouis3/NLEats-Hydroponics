@@ -8,6 +8,7 @@ import RegisterBtn from '../../components/RegisterBtn';
 
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
+import color from "../../constants/color";
 
 
 
@@ -17,7 +18,7 @@ const IndexScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Image style={styles.image} source={require('../../assets/images/indexLogo.png')} />
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="NLEats"/>
+      <HeaderText style={styles.heading} text="NLEats" textColor={color.darkGreen}/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
       <Link href={'/login'} asChild>
         <LoginBtn text="Login" />
@@ -54,10 +55,14 @@ const styles = StyleSheet.create({
     fontSize: 100,
     fontWeight: 'bold',
     marginTop: 0,
-    marginBottom: 5,
+    padding: 0,
+    marginBottom: 0,
+    
   },
   subheading: {
-    fontSize: 30,
+    fontSize: 50,
+    marginTop: 0,
+    padding: 0,
     marginBottom: 20,
   },
 

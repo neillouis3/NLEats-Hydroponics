@@ -1,5 +1,6 @@
 import React from "react";
 import { View, Button, StyleSheet, TouchableOpacity, Text, Pressable } from "react-native";
+import color from "../constants/color";
 
 
 const LoginBtn = ({onPress, text}) => {
@@ -14,7 +15,7 @@ export default LoginBtn;
 const styles = StyleSheet.create({
     // ...
     btnContainer: {
-        backgroundColor: 'rgba(37, 90, 19, 1)',
+        backgroundColor: color.darkGreen,
         borderRadius: 90,
         paddingVertical: 0,
         paddingHorizontal: 75,

@@ -36,7 +36,7 @@ const RegisterScreen = () => {
         keyboardType="numeric"
       />
       <Link replace href={'/index'} asChild>
-        <RegisterBtn text="Register"/>
+        <RegisterBtn style={styles.btn}text="Register"/>
       </Link>
 
     </ScrollView>
@@ -51,6 +51,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
 
+  },
+  btn: {
+    backgroundColor: 'green',
   },
 
   input: {
