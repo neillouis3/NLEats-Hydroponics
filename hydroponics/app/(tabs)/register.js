@@ -1,9 +1,10 @@
-import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'react-native';
+import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput, Link } from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter } from 'expo-router';
-import IndexButton from '../../components/LoginBtn';
+
+import RegisterBtn from '../../components/RegisterBtn';
 
 
 import GradientText from '../../components/GradientText';
@@ -35,10 +36,9 @@ const RegisterScreen = () => {
         placeholder="Password"
         keyboardType="numeric"
       />
-      <IndexButton
-        onPress={() => router.push('/hydroponics/app/(tabs)/register')}
-        text="Register"
-      />
+      <Link replace href={'/index'} asChild>
+        <RegisterBtn text="Register"/>
+      </Link>
 
     </ScrollView>
   );

@@ -66,13 +66,13 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   heading: {
-    fontSize: 100,
+    fontSize: 75,
     fontWeight: 'bold',
     marginTop: 0,
     marginBottom: 5,
   },
   subheading: {
-    fontSize: 30,
+    fontSize: 15,
     marginBottom: 20,
   },
 

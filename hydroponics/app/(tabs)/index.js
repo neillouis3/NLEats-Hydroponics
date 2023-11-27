@@ -23,7 +23,7 @@ const IndexScreen = () => {
       <Link href={'/login'} asChild>
         <LoginBtn text="Login" />
       </Link>
-      <Link href={'/register'} asChild>
+      <Link replace href={'/register'} asChild>
         <RegisterBtn text="Register"/>
       </Link>
 
