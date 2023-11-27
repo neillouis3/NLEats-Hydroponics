@@ -6,7 +6,6 @@ import { Stack, useRouter, Link } from 'expo-router';
 import LoginBtn from '../../components/LoginBtn';
 import RegisterBtn from '../../components/RegisterBtn';
 
-
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
 

@@ -2,7 +2,6 @@ import React from "react";
 import { View, Button, StyleSheet, TouchableOpacity, Text, Pressable } from "react-native";
 
 
-
 const RegisterBtn = ({onPress, text}) => {
     return (
         <Pressable onPress={onPress} style={styles.btnContainer}><Text style={styles.title}>{text}</Text></Pressable>
