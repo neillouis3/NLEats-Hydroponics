@@ -1,8 +1,8 @@
-import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput, Link } from 'react-native';
+import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useRouter, Link } from 'expo-router';
 
 import RegisterBtn from '../../components/RegisterBtn';
 
