@@ -33,7 +33,7 @@ const LoginScreen = () => {
       </Link>
 
       <Text>Forgot password?</Text>
-
+      <Text>Don't have account? Sign up</Text>
 
     </ScrollView>
   );
