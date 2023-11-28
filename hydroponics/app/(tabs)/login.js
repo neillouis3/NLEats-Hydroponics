@@ -32,7 +32,7 @@ const LoginScreen = () => {
         <LoginBtn text="Login" />
       </Link>
 
-      <Text>Forgot username or password</Text>
+      <Text>Forgot password?</Text>
 
 
     </ScrollView>
