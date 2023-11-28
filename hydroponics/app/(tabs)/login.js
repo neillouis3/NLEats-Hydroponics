@@ -27,12 +27,14 @@ const LoginScreen = () => {
 
         placeholder="Password"
         keyboardType="numeric"
-      />   
+      />
+      <HyperLink text="Forgot password?" />   
+
       <Link href={'/dashboard'} asChild>
         <LoginBtn text="Login" />
       </Link>
 
-      <Text>Forgot password?</Text>
+      
       <Text>Don't have account? Sign up</Text>
 
     </ScrollView>
