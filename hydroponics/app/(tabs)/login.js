@@ -28,10 +28,9 @@ const LoginScreen = () => {
         placeholder="Password"
         keyboardType="numeric"
       />   
-      <IndexButton
-        onPress={() => router.push('/hydroponics/app/(tabs)/login')}
-        text="Login"
-      />
+      <Link href={'/dashboard'} asChild>
+        <LoginBtn text="Login" />
+      </Link>
 
       <Text>Forgot username or password</Text>
 
