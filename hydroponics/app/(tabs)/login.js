@@ -16,7 +16,7 @@ const LoginScreen = () => {
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="Login" textColor={color.darkGreen}/>
-      <Text style={styles.subheading}>Enter your details to register</Text>   
+      <Text style={styles.subheading}>Access your hydroponics</Text>   
       <TextInput
         style={styles.input}
         placeholder="Username"
