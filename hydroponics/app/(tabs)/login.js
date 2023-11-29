@@ -2,12 +2,13 @@ import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'reac
 
 
 import { Text, View } from '../../components/Themed';
-import { Stack, useRouter } from 'expo-router';
+import { Stack, useRouter, Link } from 'expo-router';
 import IndexButton from '../../components/LoginBtn';
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
+import LoginBtn from '../../components/LoginBtn';
 
 
 const LoginScreen = () => {
