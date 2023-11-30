@@ -6,12 +6,12 @@ export default () => {
             screenOptions={{ 
                 headerShown: false,
                 tabBarStyle: {
-                    backgroundColor: "transparent",
+                    backgroundColor: "#F6F6F9",
                     position: 'absolute',
                     height: 100,
                     left: '5%',
                     right: '5%',
-                    bottom: '5%',
+
                     borderRadius: 15,
                     borderColor: 'black',
                     borderStyle: 'solid',

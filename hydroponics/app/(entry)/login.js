@@ -35,6 +35,11 @@ const LoginScreen = () => {
         <LoginBtn text="Login" />
       </Link>
 
+      <Text>Or</Text>
+      <Link href={'/(tabs)/dashboard'} asChild>
+        <LoginBtn text="Login by Gmail" />
+      </Link>
+
       
       <Text>Don't have account? Sign up</Text>
 
