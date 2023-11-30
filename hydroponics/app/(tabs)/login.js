@@ -67,6 +67,7 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
   },
+  
   heading: {
     fontSize: 75,
     fontWeight: 'bold',
