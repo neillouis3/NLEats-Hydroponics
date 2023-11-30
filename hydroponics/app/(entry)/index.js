@@ -20,7 +20,7 @@ const IndexScreen = () => {
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText style={styles.heading} text="NLEats" textColor={color.darkGreen}/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
-      <Link href={'/login'} asChild>
+      <Link replace href={'/login'} asChild>
         <LoginBtn text="Login" />
       </Link>
       <Link replace href={'/register'} asChild>

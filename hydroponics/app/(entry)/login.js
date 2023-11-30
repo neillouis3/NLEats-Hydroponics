@@ -3,48 +3,46 @@ import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'reac
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter, Link } from 'expo-router';
-
-import RegisterBtn from '../../components/RegisterBtn';
-
+import IndexButton from '../../components/LoginBtn';
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
+import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
+import LoginBtn from '../../components/LoginBtn';
 
-const RegisterScreen = () => {
+
+const LoginScreen = () => {
   const router = useRouter;
   return (
-    
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="Register" textColor={color.darkGreen}/>
-      <Text style={styles.subheading}>Enter your details to register</Text>    
+      <HeaderText style={styles.heading} text="Login" textColor={color.darkGreen}/>
+      <Text style={styles.subheading}>Access your hydroponics</Text>   
       <TextInput
         style={styles.input}
-
         placeholder="Username"
         keyboardType="numeric"
       /> 
       <TextInput
         style={styles.input}
 
-        placeholder="Email"
-        keyboardType="numeric"
-      />       
-      <TextInput
-        style={styles.input}
-
         placeholder="Password"
         keyboardType="numeric"
       />
-      <Link replace href={'/index'} asChild>
-        <RegisterBtn style={styles.btn}text="Register"/>
+      <HyperLink text="Forgot password?" />   
+
+      <Link href={'/(tabs)/dashboard'} asChild>
+        <LoginBtn text="Login" />
       </Link>
+
+      
+      <Text>Don't have account? Sign up</Text>
 
     </ScrollView>
   );
 }
 
-export default RegisterScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -52,9 +50,6 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
 
-  },
-  btn: {
-    backgroundColor: 'green',
   },
 
   input: {
@@ -72,6 +67,7 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
   },
+  
   heading: {
     fontSize: 75,
     fontWeight: 'bold',
@@ -81,7 +77,6 @@ const styles = StyleSheet.create({
   subheading: {
     fontSize: 15,
     marginBottom: 20,
-    
   },
 
 
