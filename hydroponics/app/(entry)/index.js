@@ -27,7 +27,6 @@ const IndexScreen = () => {
         <RegisterBtn text="Register"/>
       </Link>
 
-
     </ScrollView>
   );
 }
