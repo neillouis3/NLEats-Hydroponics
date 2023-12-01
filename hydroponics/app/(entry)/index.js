@@ -1,4 +1,4 @@
-import { Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
+import { Dimensions, Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
@@ -9,6 +9,7 @@ import RegisterBtn from '../../components/RegisterBtn';
 import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
 import color from "../../constants/color";
+import Svg, { Path } from 'react-native-svg';
 
 
 
@@ -21,7 +22,7 @@ const IndexScreen = () => {
       <HeaderText style={styles.heading} text="NLEats" textColor={color.darkGreen}/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
       <Link replace href={'/login'} asChild>
-        <LoginBtn text="Login" />
+        <LoginBtn text="Sign in" />
       </Link>
       <Link replace href={'/register'} asChild>
         <RegisterBtn text="Register"/>
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   heading: {
-    fontSize: 100,
+    fontSize: 48,
     fontWeight: 'bold',
     marginTop: 0,
     padding: 0,
@@ -60,10 +61,10 @@ const styles = StyleSheet.create({
     
   },
   subheading: {
-    fontSize: 50,
+    fontSize: 40,
     marginTop: 0,
     padding: 0,
-    marginBottom: 20,
+    marginBottom: 200,
   },
 
 
