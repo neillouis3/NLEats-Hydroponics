@@ -28,7 +28,6 @@ const IndexScreen = () => {
       </Link>
 
 
-
     </ScrollView>
   );
 }
