@@ -1,9 +1,9 @@
 import React from "react";
 import { StyleSheet, View } from "react-native";
 
-export default function cardTile(props) {
+export default function CardTile(props) {
     return (
-        <View style={styles.container}>
+        <View style={props.style}>
             <View style={styles.cardContent}>
                 {props.children}
             </View>
@@ -13,10 +13,8 @@ export default function cardTile(props) {
 
 const styles = StyleSheet.create({
     container: {
-
     },
     cardContent: {
-        marginHorizontal: 18,
-        marginVertical: 10,
+
     }
 })
