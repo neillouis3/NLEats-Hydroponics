@@ -1,4 +1,6 @@
 import { Tabs } from "expo-router";
+import Ionicons from '@expo/vector-icons/Ionicons';
+import color from "../../constants/color";
 
 export default () => {
     return (
@@ -21,10 +23,55 @@ export default () => {
         >
             <Tabs.Screen 
                 name="dashboard" 
-                
+                options={{
+                    tabBarLabel: 'Dashboard',
+
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons 
+                            name={focused ? "home" : "home-outline"} 
+                            size={size} 
+                            color={focused ? "#255A13" : "black"} 
+                        />
+                    )
+                }}
             />
-            <Tabs.Screen name="shelf" />
-            <Tabs.Screen name="profile" />
+            <Tabs.Screen 
+                name="shelf" 
+                options={{
+                    tabBarLabel: 'Shelf',
+                    
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons 
+                            name={focused ? "leaf" : "leaf-outline"} 
+                            size={size} 
+                            color={focused ? "#255A13" : "black"} 
+                        />
+                    )
+                }}
+            
+            />
+            <Tabs.Screen 
+                name="profile" 
+                options={{
+                    tabBarLabel: 'Profile',
+                    tabBarIcon: ({ color, size, focused }) => (
+                        <Ionicons 
+                            name={focused ? "person" : "person-outline"} 
+                            size={size} 
+                            color={focused ? "#255A13" : "black"} 
+                        />
+                    ),
+
+                    tabBarLabelStyle: {
+                        fontSize: 12,
+                        fontFamily: 'Montserrat',
+                        fontWeight: 'bold',
+                        color: focused ? "#255A13" : "black",
+                    }
+
+                }}
+            
+            />
             
         </Tabs>
 
