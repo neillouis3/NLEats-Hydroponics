@@ -5,6 +5,7 @@ import color from "../../constants/color";
 export default () => {
     return (
         <Tabs 
+            initialRouteName="shelf"
             screenOptions={{ 
                 headerShown: false,
                 tabBarStyle: {
@@ -14,11 +15,12 @@ export default () => {
                     left: '5%',
                     right: '5%',
 
-                    borderRadius: 15,
+                    borderRadius: 85,
                     borderColor: 'black',
                     borderStyle: 'solid',
                 }
             }}
+            
 
         >
             <Tabs.Screen 
@@ -32,7 +34,8 @@ export default () => {
                             size={size} 
                             color={focused ? "#255A13" : "black"} 
                         />
-                    )
+                    ),
+                    tabBarActiveTintColor: "#255A13",
                 }}
             />
             <Tabs.Screen 
@@ -46,7 +49,8 @@ export default () => {
                             size={size} 
                             color={focused ? "#255A13" : "black"} 
                         />
-                    )
+                    ),
+                    tabBarActiveTintColor: "#255A13",
                 }}
             
             />
@@ -54,23 +58,18 @@ export default () => {
                 name="profile" 
                 options={{
                     tabBarLabel: 'Profile',
-                    tabBarIcon: ({ color, size, focused }) => (
+                    tabBarIcon: ({size, focused }) => (
                         <Ionicons 
                             name={focused ? "person" : "person-outline"} 
                             size={size} 
                             color={focused ? "#255A13" : "black"} 
                         />
                     ),
+                    tabBarActiveTintColor: "#255A13",
 
-                    tabBarLabelStyle: {
-                        fontSize: 12,
-                        fontFamily: 'Montserrat',
-                        fontWeight: 'bold',
-                        color: focused ? "#255A13" : "black",
-                    }
 
                 }}
-            
+    
             />
             
         </Tabs>

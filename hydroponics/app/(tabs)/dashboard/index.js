@@ -10,11 +10,7 @@ import color from "../../../constants/color";
 export default function DashboardScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <HeaderText 
-        style={styles.heading} 
-        text='Dashboard' 
-        textColor={color.darkGreen}
-      />
+      
       <Text style={styles.subheading}>Activity</Text>
     </ScrollView>
   );
@@ -25,6 +21,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:"white"
   },
   title: {
     fontSize: 20,

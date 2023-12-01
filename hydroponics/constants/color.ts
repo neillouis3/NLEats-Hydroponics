@@ -3,6 +3,7 @@ const COLORS = {
     yellow: '#ADC519',
     lightGreen: '#9AC58B',
     offWhite: '#F6F6F9',
+    white: '#FFFFFF',
   
   };
   
