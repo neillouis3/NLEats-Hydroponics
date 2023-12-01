@@ -18,10 +18,9 @@ export default () => {
                     borderRadius: 85,
                     borderColor: 'black',
                     borderStyle: 'solid',
+
                 }
             }}
-            
-
         >
             <Tabs.Screen 
                 name="dashboard" 
@@ -33,9 +32,12 @@ export default () => {
                             name={focused ? "home" : "home-outline"} 
                             size={size} 
                             color={focused ? "#255A13" : "black"} 
+                            padding={0}
+                            margin={0}
                         />
                     ),
                     tabBarActiveTintColor: "#255A13",
+                    tabBarLabelPosition: "below-icon",
                 }}
             />
             <Tabs.Screen 

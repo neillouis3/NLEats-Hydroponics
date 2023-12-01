@@ -15,17 +15,24 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:"white"
+
+    backgroundColor:"white",
+    padding: '5%',
   },
-  title: {
-    fontSize: 20,
+  heading: {
+    fontSize: 50,
     fontWeight: 'bold',
+    marginTop: 0,
+    padding: 0,
+    marginBottom: 40,
+    
   },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
+  subHeading: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 0,
+    padding: 0,
+    marginBottom: 0,
+    
   },
 });

@@ -10,8 +10,16 @@ import color from "../../../constants/color";
 export default function DashboardScreen() {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      
-      <Text style={styles.subheading}>Activity</Text>
+      <HeaderText 
+        style={styles.heading}
+        text="Dashboard"
+        textColor={color.darkGreen}
+      />
+      <HeaderText 
+        style={styles.subHeading}
+        text="Activity"
+        textColor={color.lightGreen}
+      />
     </ScrollView>
   );
 }
@@ -19,21 +27,21 @@ export default function DashboardScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor:"white"
+
+    backgroundColor:"white",
+    padding: '5%',
   },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  separator: {
-    marginVertical: 30,
-    height: 1,
-    width: '80%',
-  },
+
   heading: {
-    fontSize: 75,
+    fontSize: 50,
+    fontWeight: 'bold',
+    marginTop: 0,
+    padding: 0,
+    marginBottom: 40,
+    
+  },
+  subHeading: {
+    fontSize: 30,
     fontWeight: 'bold',
     marginTop: 0,
     padding: 0,
