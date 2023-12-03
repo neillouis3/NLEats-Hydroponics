@@ -1,4 +1,4 @@
-import { Dimensions, Alert, Pressable, StyleSheet, ScrollView, Image } from 'react-native';
+import { Dimensions, Alert, Pressable, StyleSheet, ScrollView, Image, TouchableOpacity } from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
@@ -13,20 +13,42 @@ import Svg, { Path } from 'react-native-svg';
 
 
 
-const IndexScreen = () => {
+const IndexScreen = ( {navigation} ) => {
   const router = useRouter;
   return (
     <View style={styles.container}>
-      <Image style={styles.image} source={require('../../assets/images/indexLogo.png')} />
+      <Image 
+        style={styles.image} 
+        source={require('../../assets/images/indexLogo.png')} 
+      />
 
-      <HeaderText style={styles.heading} text="NLEats" textColor={color.darkGreen}/>
-      <GradientText style={styles.subheading} text="Hydroponics"/>     
-      <Link replace href={'/login'} asChild>
-        <LoginBtn text="Sign in" />
-      </Link>
-      <Link replace href={'/register'} asChild>
-        <RegisterBtn text="Register"/>
-      </Link>
+      <HeaderText 
+        style={styles.heading} 
+        text="NLEats" 
+        textColor={color.darkGreen}
+      />
+
+      <GradientText 
+        style={styles.subheading} 
+        text="Hydroponics"
+      />   
+      
+      
+      {/* Routing buttons, to add more buttons check (entry)/_layout.tsx */}
+      <TouchableOpacity 
+        style={styles.signInContainer}
+        onPress={() => navigation.navigate('login')}
+      >  
+        <Text style={styles.signIn}>Sign in</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
+        style={styles.registerContainer} 
+        onPress={() => navigation.navigate('register')}
+      >
+        <Text style={styles.register}>Register</Text>
+      </TouchableOpacity>
+
+      {/* This is the wave background */}
       <View
         style={styles.waveBox}
       >
@@ -50,6 +72,51 @@ const screenWidth = Dimensions.get('window').width;
 export default IndexScreen;
 
 const styles = StyleSheet.create({
+  signInContainer: {
+    backgroundColor: color.darkGreen,
+    borderRadius: 90,
+    paddingVertical: 0,
+    paddingHorizontal: 75,
+    marginBottom: 10,
+    width: '100%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  registerContainer: {
+    backgroundColor: color.lightGreen,
+    borderWidth: 1,
+    borderRadius: 90,
+    paddingVertical: 0,
+    paddingHorizontal: 75,
+    marginBottom: 10,
+    width: '100%',
+    height: 50,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderColor: color.darkGreen,
+  },
+  
+  signIn: {
+    fontSize: 20,
+        fontWeight: 'bold',
+        color: 'white',
+        backgroundColor: 'transparent',
+    
+        margin: 0,
+        textAlign: 'center',
+  },
+
+  register: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'white',
+    backgroundColor: 'transparent',
+
+    margin: 0,
+    textAlign: 'center',
+  },
 
   waveBox: {
     backgroundColor: color.lightGreen,
