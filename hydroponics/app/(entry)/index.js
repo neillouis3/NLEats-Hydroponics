@@ -16,9 +16,9 @@ import Svg, { Path } from 'react-native-svg';
 const IndexScreen = () => {
   const router = useRouter;
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Image style={styles.image} source={require('../../assets/images/indexLogo.png')} />
-      <Stack.Screen options={{headerTitle: ""}} />
+
       <HeaderText style={styles.heading} text="NLEats" textColor={color.darkGreen}/>
       <GradientText style={styles.subheading} text="Hydroponics"/>     
       <Link replace href={'/login'} asChild>
@@ -27,23 +27,55 @@ const IndexScreen = () => {
       <Link replace href={'/register'} asChild>
         <RegisterBtn text="Register"/>
       </Link>
-
-    </ScrollView>
+      <View
+        style={styles.waveBox}
+      >
+        <Svg
+          height="500"
+          width={screenWidth}
+          viewBox="0 0 1440 320"
+          style={{position: 'absolute', bottom: 0, left: 0, right: 0, zIndex: -1}}
+        >
+          <Path 
+            d="M0,160L80,133.3C160,107,320,53,480,74.7C640,96,800,192,960,218.7C1120,245,1280,203,1360,181.3L1440,160L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+            fill={color.lightGreen} 
+          />
+        </Svg>
+      </View>
+    </View>
   );
 }
+const screenWidth = Dimensions.get('window').width;
 
 export default IndexScreen;
 
 const styles = StyleSheet.create({
+
+  waveBox: {
+    backgroundColor: color.lightGreen,
+    height: 220,
+    width: screenWidth, 
+    position: 'absolute', 
+    bottom: 0, 
+    left: 0, 
+    right: 0, 
+    zIndex: -1 
+  },
+
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    padding: "5%",
+    paddingTop: "5%",
+    paddingLeft: "5%",
+    paddingRight: "5%",
+    bottom: 0,
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#fff',
 
 
   },
-
 
   image:{
     resizeMode: 'stretch',
