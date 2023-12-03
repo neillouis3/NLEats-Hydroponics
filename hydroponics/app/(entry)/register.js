@@ -49,9 +49,9 @@ export default RegisterScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
 
+    backgroundColor:"white",
+    padding: '5%',
   },
   btn: {
     backgroundColor: 'green',

@@ -1,14 +1,20 @@
-import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'react-native';
+import { 
+  Alert,
+  Pressable,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TextInput 
+} from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter, Link } from 'expo-router';
-import IndexButton from '../../components/LoginBtn';
-import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
 import LoginBtn from '../../components/LoginBtn';
+import { Formik } from 'formik';
 
 
 const LoginScreen = () => {
@@ -16,29 +22,62 @@ const LoginScreen = () => {
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="Login" textColor={color.darkGreen}/>
-      <Text style={styles.subheading}>Access your hydroponics</Text>   
-      <TextInput
-        style={styles.input}
-        placeholder="Username"
-        keyboardType="numeric"
-      /> 
-      <TextInput
-        style={styles.input}
+      <HeaderText style={styles.heading} text="Sign in" textColor={color.darkGreen}/>
+      <Text style={styles.subheading}>Please sign in to continue</Text>   
+      
+      
+      <Formik
+        initialValues={{ email: '', password: '' }}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        {({ handleChange, handleBlur, handleSubmit, values }) => 
+          <View>
+            <TextInput
+              label="Username"
+              style={styles.input}
+              placeholder="Username"
+              keyboardType="email-address"
 
-        placeholder="Password"
-        keyboardType="numeric"
-      />
-      <HyperLink text="Forgot password?" />   
+              onChangeText={handleChange('username')}
+              onBlur={handleBlur('username')}
+              value={values.username}
+            
+            /> 
+            <TextInput
+              label="Password"
+              style={styles.input}
+              placeholder="Password"
+              keyboardType="default"
 
-      <Link href={'/(tabs)/dashboard'} asChild>
-        <LoginBtn text="Login" />
-      </Link>
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              secureTextEntry={true}
+            
+            /> 
+
+            <HyperLink text="Forgot password?" /> 
+            <LoginBtn text="Sign in" onPress={handleSubmit}/>
+          </View>
+        }
+
+      </Formik>
+      
+      
+      
+      
+      
+        
+
+      
+
 
       <Text>Or</Text>
-      <Link href={'/(tabs)/dashboard'} asChild>
-        <LoginBtn text="Login by Gmail" />
-      </Link>
+
+      <LoginBtn text="Login by Gmail" />
+
 
       
       <Text>Don't have account? Sign up</Text>
@@ -52,8 +91,9 @@ export default LoginScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
+
+    backgroundColor:"white",
+    padding: '5%',
 
   },
 
