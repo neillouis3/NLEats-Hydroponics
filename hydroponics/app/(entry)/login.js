@@ -27,7 +27,7 @@ const LoginScreen = () => {
       
       
       <Formik
-        initialValues={{ email: '', password: '' }}
+        initialValues={{ username: '', password: '' }}
         onSubmit={(values) => {
           console.log(values);
         }}
@@ -39,6 +39,7 @@ const LoginScreen = () => {
               style={styles.input}
               placeholder="Username"
               keyboardType="email-address"
+              autoCapitalize="none"
 
               onChangeText={handleChange('username')}
               onBlur={handleBlur('username')}
@@ -50,6 +51,7 @@ const LoginScreen = () => {
               style={styles.input}
               placeholder="Password"
               keyboardType="default"
+              autoCapitalize="none"
 
               onChangeText={handleChange('password')}
               onBlur={handleBlur('password')}
