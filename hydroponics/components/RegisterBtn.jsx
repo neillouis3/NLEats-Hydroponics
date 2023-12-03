@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     // ...
     btnContainer: {
         backgroundColor: color.lightGreen,
-        borderWidth: 0,
+        borderWidth: 1,
         borderRadius: 90,
         paddingVertical: 0,
         paddingHorizontal: 75,
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
+        borderColor: color.darkGreen,
     },
     title: {
         fontSize: 20,
