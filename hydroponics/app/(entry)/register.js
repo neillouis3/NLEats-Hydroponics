@@ -43,7 +43,7 @@ const LoginScreen = ( {navigation} ) => {
       
       <Formik
         style={styles.outerFormContainer}
-        initialValues={{ username: '', password: '' }}
+        initialValues={{ fullName: '', email: '' , birthday: '', password: '', confirmPassword: '' }}
         onSubmit={(values) => {
           console.log(values);
         }}
@@ -51,9 +51,9 @@ const LoginScreen = ( {navigation} ) => {
         {({ handleChange, handleBlur, handleSubmit, values }) => 
           <View style={styles.formContainer}>
             <TextInput
-              label="Username"
+              label="Full Name"
               style={styles.usernameInput}
-              placeholder="Username"
+              placeholder="Full Name"
               keyboardType="email-address"
               autoCapitalize="none"
 
@@ -62,6 +62,31 @@ const LoginScreen = ( {navigation} ) => {
               value={values.username}
             
             /> 
+            <TextInput
+              label="Email"
+              style={styles.usernameInput}
+              placeholder="Email"
+              keyboardType="email-address"
+              autoCapitalize="none"
+
+              onChangeText={handleChange('username')}
+              onBlur={handleBlur('username')}
+              value={values.username}
+            
+            />
+            <TextInput
+              label="Birthday"
+              style={styles.usernameInput}
+              placeholder="Date of Birth"
+              keyboardType="email-address"
+              autoCapitalize="none"
+
+              onChangeText={handleChange('username')}
+              onBlur={handleBlur('username')}
+              value={values.username}
+            
+            />
+
             <TextInput
               label="Password"
               style={styles.passwordInput}
@@ -74,9 +99,22 @@ const LoginScreen = ( {navigation} ) => {
               value={values.password}
               secureTextEntry={true}
             
-            /> 
+            />
+            <TextInput
+              label="Password"
+              style={styles.passwordInput}
+              placeholder="Confirm Password"
+              keyboardType="default"
+              autoCapitalize="none"
 
-            <HyperLink text="Forgot password?" textColor={color.lightGreen} /> 
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              secureTextEntry={true}
+            
+            />  
+
+             
             <RegisterBtn text="Sign in" onPress={handleSubmit}/>
           </View>
         }
