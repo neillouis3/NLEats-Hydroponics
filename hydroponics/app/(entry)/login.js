@@ -4,7 +4,8 @@ import {
   StyleSheet,
   ScrollView,
   Image,
-  TextInput 
+  TextInput, 
+  SafeAreaView
 } from 'react-native';
 
 
@@ -20,23 +21,33 @@ import { Formik } from 'formik';
 const LoginScreen = () => {
   const router = useRouter;
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="Sign in" textColor={color.darkGreen}/>
-      <Text style={styles.subheading}>Please sign in to continue</Text>   
+      <HeaderText 
+        style={styles.heading} 
+        text="Sign in" 
+        textColor={color.darkGreen}
+      />
+
+      <HeaderText 
+        style={styles.subHeading}
+        text="Please sign in to continue"
+        textColor={color.lightGreen}
+      />   
       
       
       <Formik
+        style={styles.outerFormContainer}
         initialValues={{ username: '', password: '' }}
         onSubmit={(values) => {
           console.log(values);
         }}
       >
         {({ handleChange, handleBlur, handleSubmit, values }) => 
-          <View>
+          <View style={styles.formContainer}>
             <TextInput
               label="Username"
-              style={styles.input}
+              style={styles.usernameInput}
               placeholder="Username"
               keyboardType="email-address"
               autoCapitalize="none"
@@ -48,7 +59,7 @@ const LoginScreen = () => {
             /> 
             <TextInput
               label="Password"
-              style={styles.input}
+              style={styles.passwordInput}
               placeholder="Password"
               keyboardType="default"
               autoCapitalize="none"
@@ -60,37 +71,52 @@ const LoginScreen = () => {
             
             /> 
 
-            <HyperLink text="Forgot password?" /> 
+            <HyperLink text="Forgot password?" textColor={color.lightGreen} /> 
             <LoginBtn text="Sign in" onPress={handleSubmit}/>
           </View>
         }
 
       </Formik>
-      
-      
-      
-      
-      
-        
+
+      <Text style={{
+        height: 1,
+        backgroundColor: color.darkGreen,
+        width: '100%',
+        marginTop: 40,
+        marginBottom: 40,
+        }}></Text>
+
+      <LoginBtn 
+        text="Sign in with Google" 
+        google={true}
+      />
 
       
+      <Text style={{
+        textAlign: 'center',
+        color: color.darkGreen,
+        marginTop: 'auto',
+        }}>Don't have account? Sign up</Text>
 
-
-      <Text>Or</Text>
-
-      <LoginBtn text="Login by Gmail" />
-
-
-      
-      <Text>Don't have account? Sign up</Text>
-
-    </ScrollView>
+    </View>
   );
 }
 
 export default LoginScreen;
 
 const styles = StyleSheet.create({
+  outerFormContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    height: '100%',
+  },
+  formContainer: {
+    width: '100%',
+    alignItems: 'center',
+  },
+  
   container: {
     flex: 1,
 
@@ -99,12 +125,27 @@ const styles = StyleSheet.create({
 
   },
 
-  input: {
-    height: 40,
+  usernameInput: {
+    height: 50,
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    width: '75%',
+    width: '100%',
+    borderRadius: 10,
+    fontSize: 20,
+    borderColor: color.darkGreen,
+  },
+
+  passwordInput: {
+    height: 50,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    width: '100%',
+    borderRadius: 10,
+    fontSize: 20,
+    borderColor: color.darkGreen,
+    marginBottom: 50,
   },
 
   image:{
@@ -116,14 +157,20 @@ const styles = StyleSheet.create({
   },
   
   heading: {
-    fontSize: 75,
+    fontSize: 50,
     fontWeight: 'bold',
     marginTop: 0,
-    marginBottom: 5,
+    padding: 0,
+    marginBottom: 0,
+    
   },
-  subheading: {
-    fontSize: 15,
-    marginBottom: 20,
+  subHeading: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 0,
+    padding: 0,
+    marginBottom: 50,
+    
   },
 
 
