@@ -5,12 +5,17 @@ import {
   ScrollView,
   Image,
   TextInput, 
-  SafeAreaView
+  SafeAreaView,
+  TouchableOpacity,
+  Text,
+  View
 } from 'react-native';
 
+import {
+  Stack, 
+  useRouter
+} from 'expo-router';
 
-import { Text, View } from '../../components/Themed';
-import { Stack, useRouter, Link } from 'expo-router';
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
@@ -18,7 +23,7 @@ import LoginBtn from '../../components/LoginBtn';
 import { Formik } from 'formik';
 
 
-const LoginScreen = () => {
+const LoginScreen = ( {navigation} ) => {
   const router = useRouter;
   return (
     <View style={styles.container}>
@@ -90,13 +95,27 @@ const LoginScreen = () => {
         text="Sign in with Google" 
         google={true}
       />
-
-      
-      <Text style={{
-        textAlign: 'center',
-        color: color.darkGreen,
+      <View style={{
+        flexDirection: 'row',
+        width: '100%',
         marginTop: 'auto',
-        }}>Don't have account? Sign up</Text>
+        justifyContent: 'center',
+      }}>
+        <Text style={{
+          textAlign: 'center',
+          color: color.darkGreen,
+          marginTop: 'auto',
+          }}>Don't have account? </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('register')}>
+          <Text style={{
+            textAlign: 'center',
+            color: color.lightGreen,
+            fontWeight: 'bold',
+            }}>Sign up</Text>
+        </TouchableOpacity>
+      </View>
+      
+      
 
     </View>
   );

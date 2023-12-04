@@ -1,14 +1,21 @@
-import { Alert, Pressable, StyleSheet, ScrollView, Image, TextInput } from 'react-native';
+import { 
+  Alert,
+  Pressable,
+  StyleSheet,
+  ScrollView,
+  Image,
+  TextInput, 
+  SafeAreaView
+} from 'react-native';
 
 
 import { Text, View } from '../../components/Themed';
 import { Stack, useRouter, Link } from 'expo-router';
-
-import RegisterBtn from '../../components/RegisterBtn';
-
-import GradientText from '../../components/GradientText';
 import HeaderText from '../../components/HeaderText';
+import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
+import RegisterBtn from '../../components/RegisterBtn';
+import { Formik } from 'formik';
 
 const RegisterScreen = () => {
   const router = useRouter;
