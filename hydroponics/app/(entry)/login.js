@@ -53,7 +53,7 @@ const LoginScreen = ( {navigation} ) => {
             <TextInput
               label="Username"
               style={styles.usernameInput}
-              placeholder="Username"
+              placeholder="Email"
               keyboardType="email-address"
               autoCapitalize="none"
 

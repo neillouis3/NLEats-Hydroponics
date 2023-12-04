@@ -19,7 +19,7 @@ import {
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
-import LoginBtn from '../../components/LoginBtn';
+import RegisterBtn from '../../components/RegisterBtn';
 import { Formik } from 'formik';
 
 
@@ -30,13 +30,13 @@ const LoginScreen = ( {navigation} ) => {
       <Stack.Screen options={{headerTitle: ""}} />
       <HeaderText 
         style={styles.heading} 
-        text="Sign in" 
+        text="Sign up" 
         textColor={color.darkGreen}
       />
 
       <HeaderText 
         style={styles.subHeading}
-        text="Please sign in to continue"
+        text="Create your account"
         textColor={color.lightGreen}
       />   
       
@@ -77,7 +77,7 @@ const LoginScreen = ( {navigation} ) => {
             /> 
 
             <HyperLink text="Forgot password?" textColor={color.lightGreen} /> 
-            <LoginBtn text="Sign in" onPress={handleSubmit}/>
+            <RegisterBtn text="Sign in" onPress={handleSubmit}/>
           </View>
         }
 
@@ -91,10 +91,6 @@ const LoginScreen = ( {navigation} ) => {
         marginBottom: 40,
         }}></Text>
 
-      <LoginBtn 
-        text="Sign in with Google" 
-        google={true}
-      />
       <View style={{
         flexDirection: 'row',
         width: '100%',
@@ -105,13 +101,13 @@ const LoginScreen = ( {navigation} ) => {
           textAlign: 'center',
           color: color.darkGreen,
           marginTop: 'auto',
-          }}>Don't have account? </Text>
+          }}>Already have an account? </Text>
         <TouchableOpacity onPress={() => navigation.navigate('register')}>
           <Text style={{
             textAlign: 'center',
             color: color.lightGreen,
             fontWeight: 'bold',
-            }}>Sign up</Text>
+            }}>Sign in</Text>
         </TouchableOpacity>
       </View>
       
