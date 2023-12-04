@@ -145,7 +145,7 @@ const LoginScreen = ( {navigation} ) => {
             />  
 
              
-            <RegisterBtn text="Sign in" onPress={handleSubmit}/>
+            <RegisterBtn text="Sign up" onPress={handleSubmit}/>
           </View>
         }
 
@@ -175,7 +175,7 @@ const LoginScreen = ( {navigation} ) => {
             textAlign: 'center',
             color: color.lightGreen,
             fontWeight: 'bold',
-            }}>Sign up</Text>
+            }}>Sign in</Text>
         </TouchableOpacity>
       </View>
       
@@ -190,13 +190,12 @@ export default LoginScreen;
 const CustomTextInput = ({ label, isDate, showDatePicker, ...props }) => {
   return (
     <View>
-
-      {!isDate && (
-        <TextInput style={styles.usernameInput} {...props}></TextInput>
-      )}
+      {!isDate && 
+        <TextInput style={styles.usernameInput} {...props} />
+      }
       {isDate && (
         <TouchableOpacity onPress={showDatePicker}>
-          <TextInput style={styles.usernameInput} {...props}></TextInput>
+          <TextInput style={styles.usernameInput} {...props} />
         </TouchableOpacity>
       )}
 
