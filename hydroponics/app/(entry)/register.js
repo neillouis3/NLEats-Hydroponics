@@ -16,15 +16,32 @@ import {
   useRouter
 } from 'expo-router';
 
+import React, { useState } from 'react';
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
 import RegisterBtn from '../../components/RegisterBtn';
 import { Formik } from 'formik';
 
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 const LoginScreen = ( {navigation} ) => {
   const router = useRouter;
+  const [show, setShow] = useState(false);
+  const [date, setDate] = useState(new Date(2000, 0, 1));
+
+  const [dob, setDob] = useState();
+
+  const onChange = (event, selectedDate) => {
+    const currentDate = selectedDate || date;
+    setShow(false);
+    setDate(currentDate);
+    setDob(currentDate);
+  }
+
+  const showDatePicker = () => {
+    setShow(true);
+  }
   return (
     <View style={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
@@ -40,10 +57,21 @@ const LoginScreen = ( {navigation} ) => {
         textColor={color.lightGreen}
       />   
       
+      {show && (
+        <DateTimePicker
+          testID="dateTimePicker"
+          value={date}
+          mode={date}
+          is24Hour={true}
+          display="default"
+          onChange={onChange}
+          
+        />
+      )}
       
       <Formik
         style={styles.outerFormContainer}
-        initialValues={{ fullName: '', email: '' , birthday: '', password: '', confirmPassword: '' }}
+        initialValues={{ fullName: '', email: '' , dateOfBirth: '', password: '', confirmPassword: '' }}
         onSubmit={(values) => {
           console.log(values);
         }}
@@ -57,9 +85,9 @@ const LoginScreen = ( {navigation} ) => {
               keyboardType="email-address"
               autoCapitalize="none"
 
-              onChangeText={handleChange('username')}
-              onBlur={handleBlur('username')}
-              value={values.username}
+              onChangeText={handleChange('fullName')}
+              onBlur={handleBlur('fullName')}
+              value={values.fullName}
             
             /> 
             <TextInput
@@ -69,21 +97,23 @@ const LoginScreen = ( {navigation} ) => {
               keyboardType="email-address"
               autoCapitalize="none"
 
-              onChangeText={handleChange('username')}
-              onBlur={handleBlur('username')}
-              value={values.username}
+              onChangeText={handleChange('email')}
+              onBlur={handleBlur('email')}
+              value={values.email}
             
             />
-            <TextInput
+            <CustomTextInput
               label="Birthday"
               style={styles.usernameInput}
               placeholder="Date of Birth"
-              keyboardType="email-address"
-              autoCapitalize="none"
 
-              onChangeText={handleChange('username')}
-              onBlur={handleBlur('username')}
-              value={values.username}
+
+              onChangeText={handleChange('dateOfBirth')}
+              onBlur={handleBlur('dateOfBirth')}
+              value={dob ? dob.toDateString() : ""}
+              isDate={true}
+              editable={false}
+              showDatePicker={showDatePicker}
             
             />
 
@@ -107,9 +137,9 @@ const LoginScreen = ( {navigation} ) => {
               keyboardType="default"
               autoCapitalize="none"
 
-              onChangeText={handleChange('password')}
-              onBlur={handleBlur('password')}
-              value={values.password}
+              onChangeText={handleChange('confirmPassword')}
+              onBlur={handleBlur('confirmPassword')}
+              value={values.confirmPassword}
               secureTextEntry={true}
             
             />  
@@ -140,7 +170,7 @@ const LoginScreen = ( {navigation} ) => {
           color: color.darkGreen,
           marginTop: 'auto',
           }}>Already have an account? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('register')}>
+        <TouchableOpacity onPress={() => navigation.navigate('login')}>
           <Text style={{
             textAlign: 'center',
             color: color.lightGreen,
@@ -156,6 +186,25 @@ const LoginScreen = ( {navigation} ) => {
 }
 
 export default LoginScreen;
+
+const CustomTextInput = ({ label, isDate, showDatePicker, ...props }) => {
+  return (
+    <View>
+
+      {!isDate && (
+        <TextInput style={styles.usernameInput} {...props}></TextInput>
+      )}
+      {isDate && (
+        <TouchableOpacity onPress={showDatePicker}>
+          <TextInput style={styles.usernameInput} {...props}></TextInput>
+        </TouchableOpacity>
+      )}
+
+    </View>
+  );
+
+};
+
 
 const styles = StyleSheet.create({
   outerFormContainer: {
