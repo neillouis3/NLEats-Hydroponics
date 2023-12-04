@@ -5,71 +5,166 @@ import {
   ScrollView,
   Image,
   TextInput, 
-  SafeAreaView
+  SafeAreaView,
+  TouchableOpacity,
+  Text,
+  View
 } from 'react-native';
 
+import {
+  Stack, 
+  useRouter
+} from 'expo-router';
 
-import { Text, View } from '../../components/Themed';
-import { Stack, useRouter, Link } from 'expo-router';
 import HeaderText from '../../components/HeaderText';
 import HyperLink from '../../components/HyperLink';
 import color from "../../constants/color";
-import RegisterBtn from '../../components/RegisterBtn';
+import LoginBtn from '../../components/LoginBtn';
 import { Formik } from 'formik';
 
-const RegisterScreen = () => {
+
+const LoginScreen = ( {navigation} ) => {
   const router = useRouter;
   return (
-    
-    <ScrollView contentContainerStyle={styles.container}>
+    <View style={styles.container}>
       <Stack.Screen options={{headerTitle: ""}} />
-      <HeaderText style={styles.heading} text="Register" textColor={color.darkGreen}/>
-      <Text style={styles.subheading}>Start your hydroponics journey</Text>    
-      <TextInput
-        style={styles.input}
-
-        placeholder="Username"
-        keyboardType="numeric"
-      /> 
-      <TextInput
-        style={styles.input}
-
-        placeholder="Email"
-        keyboardType="numeric"
-      />       
-      <TextInput
-        style={styles.input}
-
-        placeholder="Password"
-        keyboardType="numeric"
+      <HeaderText 
+        style={styles.heading} 
+        text="Sign in" 
+        textColor={color.darkGreen}
       />
-      <Link replace href={'/index'} asChild>
-        <RegisterBtn style={styles.btn}text="Register"/>
-      </Link>
 
-    </ScrollView>
+      <HeaderText 
+        style={styles.subHeading}
+        text="Please sign in to continue"
+        textColor={color.lightGreen}
+      />   
+      
+      
+      <Formik
+        style={styles.outerFormContainer}
+        initialValues={{ username: '', password: '' }}
+        onSubmit={(values) => {
+          console.log(values);
+        }}
+      >
+        {({ handleChange, handleBlur, handleSubmit, values }) => 
+          <View style={styles.formContainer}>
+            <TextInput
+              label="Username"
+              style={styles.usernameInput}
+              placeholder="Username"
+              keyboardType="email-address"
+              autoCapitalize="none"
+
+              onChangeText={handleChange('username')}
+              onBlur={handleBlur('username')}
+              value={values.username}
+            
+            /> 
+            <TextInput
+              label="Password"
+              style={styles.passwordInput}
+              placeholder="Password"
+              keyboardType="default"
+              autoCapitalize="none"
+
+              onChangeText={handleChange('password')}
+              onBlur={handleBlur('password')}
+              value={values.password}
+              secureTextEntry={true}
+            
+            /> 
+
+            <HyperLink text="Forgot password?" textColor={color.lightGreen} /> 
+            <LoginBtn text="Sign in" onPress={handleSubmit}/>
+          </View>
+        }
+
+      </Formik>
+
+      <Text style={{
+        height: 1,
+        backgroundColor: color.darkGreen,
+        width: '100%',
+        marginTop: 40,
+        marginBottom: 40,
+        }}></Text>
+
+      <LoginBtn 
+        text="Sign in with Google" 
+        google={true}
+      />
+      <View style={{
+        flexDirection: 'row',
+        width: '100%',
+        marginTop: 'auto',
+        justifyContent: 'center',
+      }}>
+        <Text style={{
+          textAlign: 'center',
+          color: color.darkGreen,
+          marginTop: 'auto',
+          }}>Don't have account? </Text>
+        <TouchableOpacity onPress={() => navigation.navigate('register')}>
+          <Text style={{
+            textAlign: 'center',
+            color: color.lightGreen,
+            fontWeight: 'bold',
+            }}>Sign up</Text>
+        </TouchableOpacity>
+      </View>
+      
+      
+
+    </View>
   );
 }
 
-export default RegisterScreen;
+export default LoginScreen;
 
 const styles = StyleSheet.create({
+  outerFormContainer: {
+    width: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    height: '100%',
+  },
+  formContainer: {
+    width: '100%',
+    alignItems: 'center',
+  },
+  
   container: {
     flex: 1,
 
     backgroundColor:"white",
     padding: '5%',
-  },
-  btn: {
-    backgroundColor: 'green',
+
   },
 
-  input: {
-    height: 40,
+  usernameInput: {
+    height: 50,
     margin: 12,
     borderWidth: 1,
     padding: 10,
-    width: '75%',
+    width: '100%',
+    borderRadius: 10,
+    fontSize: 20,
+    borderColor: color.darkGreen,
+  },
+
+  passwordInput: {
+    height: 50,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+    width: '100%',
+    borderRadius: 10,
+    fontSize: 20,
+    borderColor: color.darkGreen,
+    marginBottom: 50,
   },
 
   image:{
@@ -79,15 +174,21 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0,
   },
+  
   heading: {
-    fontSize: 75,
+    fontSize: 50,
     fontWeight: 'bold',
     marginTop: 0,
-    marginBottom: 5,
+    padding: 0,
+    marginBottom: 0,
+    
   },
-  subheading: {
-    fontSize: 15,
-    marginBottom: 20,
+  subHeading: {
+    fontSize: 30,
+    fontWeight: 'bold',
+    marginTop: 0,
+    padding: 0,
+    marginBottom: 50,
     
   },
 
