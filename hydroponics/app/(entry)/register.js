@@ -175,7 +175,7 @@ const LoginScreen = ( {navigation} ) => {
             textAlign: 'center',
             color: color.lightGreen,
             fontWeight: 'bold',
-            }}>Sign in</Text>
+            }}>Sign up</Text>
         </TouchableOpacity>
       </View>
       
