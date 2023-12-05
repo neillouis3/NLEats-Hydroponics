@@ -2,7 +2,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import IndexScreen from "./index";
 import LoginScreen from "./login";
 import RegisterScreen from "./register";
-import { NavigationContainer } from "@react-navigation/native";
+
 
 const Stack = createStackNavigator();
 export default function MyStack () {
@@ -19,7 +19,7 @@ export default function MyStack () {
                 <Stack.Screen name="login" component={LoginScreen} />   
                 <Stack.Screen name="register" component={RegisterScreen} />
                 <Stack.Screen name="registerOrg" component={RegisterScreen} />   
-                 
+
             </Stack.Navigator>
 
             
