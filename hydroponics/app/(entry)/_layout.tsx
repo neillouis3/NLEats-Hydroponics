@@ -18,7 +18,8 @@ export default function MyStack () {
                 <Stack.Screen name="selection" component={RegisterScreen} />    
                 <Stack.Screen name="login" component={LoginScreen} />   
                 <Stack.Screen name="register" component={RegisterScreen} />
-                <Stack.Screen name="registerOrg" component={RegisterScreen} />    
+                <Stack.Screen name="registerOrg" component={RegisterScreen} />   
+                 
             </Stack.Navigator>
 
             
