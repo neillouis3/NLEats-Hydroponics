@@ -13,7 +13,8 @@ import {
 
 import {
   Stack, 
-  useRouter
+  useRouter,
+  Link
 } from 'expo-router';
 
 import HeaderText from '../../components/HeaderText';
@@ -91,10 +92,16 @@ const LoginScreen = ( {navigation} ) => {
         marginBottom: 40,
         }}></Text>
 
+      
       <LoginBtn 
         text="Sign in with Google" 
         google={true}
+        
       />
+
+
+      
+      <Link href="/dashboard">Dashboard</Link>
       <View style={{
         flexDirection: 'row',
         width: '100%',
